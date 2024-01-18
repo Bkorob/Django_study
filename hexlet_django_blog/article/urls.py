@@ -4,5 +4,5 @@ from hexlet_django_blog.article import views
 
 urlpatterns = [
     path('', views.index),
-    path('1/', views.ops),
+   #path('1/', views.ops),
 ]

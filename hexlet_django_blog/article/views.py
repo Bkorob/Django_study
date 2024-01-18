@@ -4,8 +4,8 @@ from django.http import HttpResponse
 
 
 def index(request):
-    return HttpResponse('<a href="1/">article</a>')
+    return render(request, 'articles/index.html', context={'name': 'article'})
 
 
-def ops(request):
-    return render(request, 'ops.html')
+# def ops(request):
+#     return render(request, 'ops.html')

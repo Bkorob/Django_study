@@ -16,12 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from hexlet_django_blog.views import *
+from hexlet_django_blog import views
 
 
 urlpatterns = [
-    path('', HomePageView.as_view()),
-    path('about/', TemplateView.as_view(template_name='about.html')),
+    path('', views.HomePageView.as_view()),
+    path('about/', views.TemplateView.as_view(template_name='about.html')),
     path('articles/', include('hexlet_django_blog.article.urls')),
-    path("admin/", admin.site.urls),
+    # path("admin/", admin.site.urls),
 ]

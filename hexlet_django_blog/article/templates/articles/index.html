@@ -1,2 +1,10 @@
-<h1>хоспаде!</h1>
-<div>Называется <a href="/">{{name}}</a></div>
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% for article in articles %}
+
+<h3>{{ article.name }}</h3>
+<div><p>{{ article.body|slice:':100' }}</p></div>
+{% endfor %}
+{% endblock %}

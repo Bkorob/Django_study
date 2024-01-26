@@ -9,8 +9,12 @@
                 <ul>
                     <li><a href="/">Главная</a></li>
                     <li><a href="/articles/">Статьи</a></li>
+                    <li><a href="{% url 'about' %}">О блоге</a></li>
                 </ul>
             {% endblock %}
+        </div>
+        <div id="content">
+            {% block contents %}{% endblock %}
         </div>
         <div id="content">
             {% block content %}{% endblock %}

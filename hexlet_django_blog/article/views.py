@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
 from django.views import View
 from hexlet_django_blog.article.models import Article
@@ -18,6 +18,7 @@ def article(request, tags, article_id):
     return render(request, 'articles/psevdohome.html', {'tag': tags, 'art': article_id})
 
 
-# class ArticleView(View):
-#     def get(self, request):
-#         return redirect('article', tags='python', article_id=42)
+class ArticleView(View):
+    def get(self, request, *ar, **kw):
+        article = get_object_or_404(Article, id=kw['id'])
+        return render(request, 'articles/show.html', {'article': article})

@@ -1,10 +1,21 @@
 {% extends 'base.html' %}
 
-{% block content %}
+{% block sidebar %}
+    <ul>
+        <li><a href="/">Главная</a></li>
+        <li><a href="{% url 'about' %}">О блоге</a></li>
+    </ul>
+{% endblock %}
 
+{% block content %}
 {% for article in articles %}
 
-<h3>{{ article.name }}</h3>
-<div><p>{{ article.body|slice:':100' }}</p></div>
+<h3>
+    <a href="{% url 'article' article.id %}">{{ article.name }}</a>
+</h3>
+<div>
+    <p>{{ article.body|slice:':100' }}</p>
+</div>
+
 {% endfor %}
 {% endblock %}

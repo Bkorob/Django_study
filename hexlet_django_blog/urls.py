@@ -22,7 +22,7 @@ from hexlet_django_blog.article.views import IndexView
 
 urlpatterns = [
     path('', views.HomePageView.as_view()),
-    path('about/', views.TemplateView.as_view(template_name='about.html')),
+    path('about/', views.TemplateView.as_view(template_name='about.html'), name='about'),
     path('articles/', include('hexlet_django_blog.article.urls')),
     path("admin/", admin.site.urls),
 ]

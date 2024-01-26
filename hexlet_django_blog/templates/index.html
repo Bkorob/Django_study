@@ -1,6 +1,13 @@
 {% extends 'base.html' %}
 
+{% block sidebar %}
+    <ul>
+        <li><a href="/articles/">Статьи</a></li>
+        <li><a href="{% url 'about' %}">О блоге</a></li>
+    </ul>
+{% endblock %}
+
 {% block content %}
-<h2>Это мой учебный проект на <a href="about/">{{ who }}</a></h2>
-<p>пока что, я могу в нем сказать только: {{ eve }}</p>
+<h2>Это мой учебный проект на {{ who }}</h2>
+<p>Он содержит не большой, но пополняемый список статей о Django</p>
 {% endblock %}

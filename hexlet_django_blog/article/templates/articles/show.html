@@ -2,16 +2,16 @@
 
 
 {% block sidebar %}
-                <ul>
-                    <li><a href="/">Главная</a></li>
-                    <li><a href="{% url 'articles' %}">Назад</a></li>
-                </ul>
-            {% endblock %}
+    <ul>
+        <li><a href="/">Главная</a></li>
+        <li><a href="{% url 'articles' %}">Назад</a></li>
+    </ul>
+{% endblock %}
 {% block content %}
     <h2>{{ article.name }}</h2>
 
     <section>
-        <p>{{ article.body }}</p>
+        <p style="text-align: left;">{{ article.body }}</p>
     </section>
 
 {% endblock %}
